@@ -1,7 +1,9 @@
 # tinder_clone
 
-A new Flutter project.
+Um clone do tinder.
 
+1 fazer front utilizando dados mockados.
+2 Analise se vou usar o Parse Server, Curso e firebase 
 ## Getting Started
 
 This project is a starting point for a Flutter application.

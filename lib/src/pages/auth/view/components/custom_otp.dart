@@ -8,17 +8,16 @@ class CustomOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController controller = TextEditingController();
-    final FocusNode focusNode = FocusNode();
     bool isFirstField = true;
 
     //
     controller.addListener(() {
       if (controller.text.isEmpty && !isFirstField && id != 0) {
         FocusScope.of(context).previousFocus();
-        print('ola');
+        debugPrint('ola mundo');
       } else if (controller.text.isNotEmpty && isFirstField) {
         isFirstField = false;
-        print('uisd');
+         debugPrint('uiisdsd');
       }
       if (controller.text.length > 1) {
         controller.value = controller.value.copyWith(
@@ -35,6 +34,7 @@ class CustomOtp extends StatelessWidget {
         right: 10,
       ),
       child: TextFormField(
+        cursorColor: const Color(0xFFFE5048),
         controller: controller,
         keyboardType: TextInputType.number,
         inputFormatters: [
@@ -43,13 +43,21 @@ class CustomOtp extends StatelessWidget {
         onChanged: (value) {
           if (value.length == 1 && id < 5) {
             FocusScope.of(context).nextFocus();
-            print('oi');
+            debugPrint('value');
           }
         },
         style: const TextStyle(
           color: Colors.black,
           fontSize: 22,
           fontWeight: FontWeight.bold,
+        ),
+        decoration: const InputDecoration(
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFFFE5048),
+              width: 2,
+            ),
+          ),
         ),
         textAlign: TextAlign.center,
       ),

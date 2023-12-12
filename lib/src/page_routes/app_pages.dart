@@ -40,7 +40,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: PagesRoutes.insertEmailProblemSignInRoute,
-      page: () => const InsertEmailProblemSignInScreen(),
+      page: () => InsertEmailProblemSignInScreen(),
     ),
   ];
 }
@@ -49,7 +49,8 @@ abstract class PagesRoutes {
   static const String baseRoute = '/';
   static const String signInRoute = '/signIn';
   static const String problemSignInRoute = '/problemSignIn';
-  static const String insertEmailProblemSignInRoute = '/insertEmailProblemSignIn';
+  static const String insertEmailProblemSignInRoute =
+      '/insertEmailProblemSignIn';
   static const String authNumberRoute = '/authNumber';
   static const String authNumberOtpRoute = '/authNumberOtp';
   static const String insertNameRoute = '/insertName';

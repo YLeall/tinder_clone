@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tinder_clone/src/page_routes/app_pages.dart';
+import 'package:tinder_clone/src/pages/auth/controller/auth_controller.dart';
 
 void main() {
+  Get.put(AuthController());
   runApp(const MyApp());
 }
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tinder_clone/src/page_routes/app_pages.dart';
 import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
 class ProblemSignInScreen extends StatelessWidget {
@@ -45,7 +47,9 @@ class ProblemSignInScreen extends StatelessWidget {
             ),
             CustomButton(
               label: 'Entrar com e-mail',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(PagesRoutes.insertEmailProblemSignInRoute);
+              },
             ),
           ],
         ),

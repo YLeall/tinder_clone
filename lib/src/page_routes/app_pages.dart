@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tinder_clone/src/pages/auth/view/auth_number_otp_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/auth_number_screen.dart';
+import 'package:tinder_clone/src/pages/auth/view/insert_email_problem_sign_in_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_email_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_name_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/problem_sign_in_screen.dart';
@@ -37,6 +38,10 @@ abstract class AppPages {
       name: PagesRoutes.welcomeRoute,
       page: () => const WelcomeScreen(),
     ),
+    GetPage(
+      name: PagesRoutes.insertEmailProblemSignInRoute,
+      page: () => const InsertEmailProblemSignInScreen(),
+    ),
   ];
 }
 
@@ -44,6 +49,7 @@ abstract class PagesRoutes {
   static const String baseRoute = '/';
   static const String signInRoute = '/signIn';
   static const String problemSignInRoute = '/problemSignIn';
+  static const String insertEmailProblemSignInRoute = '/insertEmailProblemSignIn';
   static const String authNumberRoute = '/authNumber';
   static const String authNumberOtpRoute = '/authNumberOtp';
   static const String insertNameRoute = '/insertName';

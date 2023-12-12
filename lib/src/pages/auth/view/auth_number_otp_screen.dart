@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:tinder_clone/src/page_routes/app_pages.dart';
 import 'package:tinder_clone/src/pages/auth/view/components/custom_otp.dart';
 import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
 class AuthNumberOtpScreen extends StatelessWidget {
-  const AuthNumberOtpScreen({super.key});
+   AuthNumberOtpScreen({super.key});
+  final List<String> otpDigits = [];
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +81,16 @@ class AuthNumberOtpScreen extends StatelessWidget {
                 itemCount: 6,
               ),
             ),
+            
+
             const SizedBox(
               height: 60,
             ),
             CustomButton(
               label: 'Continuar',
               onPressed: () {
-                print('teste');
+                // debugPrint(otpDigits.join());
+                Get.toNamed(PagesRoutes.insertEmailRoute);
               },
             ),
           ],

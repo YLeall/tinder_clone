@@ -12,18 +12,23 @@ class CustomOtp extends StatelessWidget {
 
     //
     controller.addListener(() {
-      if (controller.text.isEmpty && !isFirstField && id != 0) {
+      if (controller.text.isEmpty && id != 0) {
         FocusScope.of(context).previousFocus();
         debugPrint('ola mundo');
-      } else if (controller.text.isNotEmpty && isFirstField) {
+        debugPrint(controller.text);
+      }
+      else if (controller.text.isNotEmpty && isFirstField) {
         isFirstField = false;
-         debugPrint('uiisdsd');
+        debugPrint('uiisdsd');
       }
       if (controller.text.length > 1) {
         controller.value = controller.value.copyWith(
           text: controller.text.substring(controller.text.length - 1),
           selection: const TextSelection.collapsed(offset: 1),
         );
+      }
+      if (controller.text.isEmpty) {
+        debugPrint("vazio");
       }
     });
 
@@ -43,8 +48,10 @@ class CustomOtp extends StatelessWidget {
         onChanged: (value) {
           if (value.length == 1 && id < 5) {
             FocusScope.of(context).nextFocus();
+            debugPrint(controller.text);
             debugPrint('value');
           }
+          
         },
         style: const TextStyle(
           color: Colors.black,

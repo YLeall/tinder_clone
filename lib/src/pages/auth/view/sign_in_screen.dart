@@ -60,18 +60,29 @@ class SignInScreen extends StatelessWidget {
                     pathImage: 'assets/app_icons/icon_message.png',
                     title: 'ENTRAR COM O NÚMERO DE',
                     onPressed: () {
-                      Get.toNamed(PagesRoutes.authNumberRoute,);
+                      Get.toNamed(
+                        PagesRoutes.authNumberRoute,
+                      );
                     },
                   ),
                   const SizedBox(
                     height: 8,
                   ),
-                  const Text(
-                    'Problemas para fazer o login?',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                  TextButton(
+                    onPressed: () {
+                      Get.toNamed(PagesRoutes.problemSignInRoute);
+                    },
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.transparent),
+                    ),
+                    child: const Text(
+                      'Problemas para fazer o login?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ],

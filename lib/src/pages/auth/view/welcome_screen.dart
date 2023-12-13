@@ -64,86 +64,94 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'Seja você mesmo(a).',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text(
-              'Certifique-se de que suas fotos, idade e descrição sejam verdadeiras.',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-              ),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const Text(
-              'Proteja-se.',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text.rich(
-              TextSpan(
-                style: const TextStyle(
-                  color: Color(0xFF828693),
-                ),
+            Expanded(
+              child: ListView(
                 children: [
-                  const TextSpan(
-                    text: 'Não dê informações pessoais logo de cara. ',
-                  ),
-                  TextSpan(
-                    text: 'Dicas de segurança',
+                  const Text(
+                    'Seja você mesmo(a).',
                     style: TextStyle(
-                      color: Colors.blue,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.blue.shade300,
                       fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'Certifique-se de que suas fotos, idade e descrição sejam verdadeiras.',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Text(
+                    'Proteja-se.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      style: const TextStyle(
+                        color: Color(0xFF828693),
+                      ),
+                      children: [
+                        const TextSpan(
+                          text: 'Não dê informações pessoais logo de cara. ',
+                        ),
+                        TextSpan(
+                          text: 'Dicas de segurança',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.blue.shade300,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Text(
+                    'Seja legal.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'Respeite os outros e os tarte como você gostaria de ser tratado(a).',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Text(
+                    'Seja pró-ativo(a).',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'Sempre denuncie mau comportamento.',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 12,
-            ),
-            const Text(
-              'Seja legal.',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text(
-              'Respeite os outros e os tarte como você gostaria de ser tratado(a).',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-              ),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const Text(
-              'Seja pró-ativo(a).',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text(
-              'Sempre denuncie mau comportamento.',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-              ),
-            ),
-            const Spacer(),
+            // const Spacer(),
             CustomButton(
               label: 'Eu aceito',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(PagesRoutes.insertNameRoute);
+              },
             ),
             const SizedBox(
               height: 20,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tinder_clone/src/page_routes/app_pages.dart';
-import 'package:tinder_clone/src/pages/auth/view/components/custom_auth_button.dart';
 import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
 class InsertEmailScreen extends StatelessWidget {
@@ -89,10 +88,49 @@ class InsertEmailScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                CustomAuthButton(
-                  pathImage: 'assets/app_icons/icon_google.png',
-                  title: 'ENTRAR COM O GOOGLE',
-                  onPressed: () {},
+                SizedBox(
+                  height: 60,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      debugPrint("Apertei");
+                    },
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.transparent),
+                      elevation: MaterialStateProperty.all<double>(0),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          side: const BorderSide(
+                            color: Colors.grey,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.transparent),
+                    ),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          'assets/app_icons/icon_google.png',
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        const Text(
+                          'ENTRAR COM O GOOGLE',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 18,
                 ),
                 Text(
                   'Faça a verficação instantânea conecando sua conta do Google',

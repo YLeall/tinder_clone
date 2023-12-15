@@ -133,7 +133,7 @@ class InsertEmailScreen extends StatelessWidget {
                   height: 18,
                 ),
                 Text(
-                  'Faça a verficação instantânea conecando sua conta do Google',
+                  'Faça a verificação instantânea conectando sua conta do Google',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.grey.shade600,

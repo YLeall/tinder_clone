@@ -36,7 +36,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "Ao tocar em entrar, você concorda com os nossos Temos. Saiba como processamos seus dados em nosssa Política de Privacidade e Política de Cookies.",
+                    "Ao tocar em entrar, você concorda com os nossos Termos. Saiba como processamos seus dados em nosssa Política de Privacidade e Política de Cookies.",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

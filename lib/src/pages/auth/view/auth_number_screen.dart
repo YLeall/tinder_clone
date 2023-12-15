@@ -131,3 +131,22 @@ class AuthNumberScreen extends StatelessWidget {
     );
   }
 }
+
+
+// DropdownButton(
+  //   items: null,
+  //   onChanged: null,
+  //   hint: const Text(
+  //     'BR +55',
+  //     style: TextStyle(
+  //       color: Color(0xFF444142),
+  //       fontSize: 18,
+  //     ),
+  //   ),
+  //   padding: const EdgeInsetsDirectional.only(
+  //     top: 2,
+  //   ),
+  //   onTap: () {
+  //     debugPrint('apertei dropdown');
+  //   },
+  // ),

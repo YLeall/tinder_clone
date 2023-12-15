@@ -122,7 +122,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Respeite os outros e os tarte como você gostaria de ser tratado(a).',
+                    'Respeite os outros e os trate como você gostaria de ser tratado(a).',
                     style: TextStyle(
                       color: Colors.grey.shade600,
                     ),

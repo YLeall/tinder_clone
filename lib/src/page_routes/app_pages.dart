@@ -50,7 +50,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: PagesRoutes.insertGenderRoute,
-      page: () => InsertGenderScreen(),
+      page: () => const InsertGenderScreen(),
     ),
   ];
 }

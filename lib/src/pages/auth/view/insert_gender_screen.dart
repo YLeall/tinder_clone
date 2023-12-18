@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tinder_clone/src/config/app_data.dart';
 import 'package:tinder_clone/src/pages/auth/view/components/custom_button_gender.dart';
 import 'package:tinder_clone/src/pages/auth/view/components/gender_tile.dart';
+import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
 class InsertGenderScreen extends StatelessWidget {
   const InsertGenderScreen({super.key});
@@ -61,6 +63,39 @@ class InsertGenderScreen extends StatelessWidget {
               ),
               const SizedBox(
                 height: 12,
+              ),
+              IntrinsicHeight(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Text(
+                      'Saiba por que o Tinder pede essas informações.',
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
+                    ),
+                    const Divider(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Checkbox(value: true, onChanged: (value) {},),
+                        Text(
+                          'Mostrar gênero no perfil',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                      ],
+                    ),
+                    CustomButton(
+                      label: 'Seguinte',
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
             ],
           ),

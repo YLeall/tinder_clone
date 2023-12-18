@@ -27,11 +27,20 @@ class CustomButtonGenderExpansionTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            subTitle,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                subTitle,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Icon(
+                Icons.check,
+                color: Color(0xFFFE5048),
+              ),
+            ],
           ),
           const SizedBox(
             height: 5,

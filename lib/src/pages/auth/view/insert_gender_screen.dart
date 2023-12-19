@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tinder_clone/src/config/app_data.dart';
-import 'package:tinder_clone/src/pages/auth/view/components/custom_button_gender.dart';
-import 'package:tinder_clone/src/pages/auth/view/components/gender_tile.dart';
+import 'package:tinder_clone/src/pages/auth/view/components/custom_button_gender_tile.dart';
 import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
 class InsertGenderScreen extends StatelessWidget {
@@ -41,24 +39,14 @@ class InsertGenderScreen extends StatelessWidget {
                 height: 16,
               ),
               Expanded(
-                child: ListView(
-                  children: [
-                    const CustomButtonGender(title: 'Homem'),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    GenderTile(
-                      listGender: listGenderHomem,
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    const CustomButtonGender(title: 'Mulher'),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    const CustomButtonGender(title: 'Além de binário'),
-                  ],
+                child: ListView.builder(
+                  itemCount: listTitleGender.length,
+                  itemBuilder: (context, index) {
+                    return CustomButtonGenderTile(
+                      title: listTitleGender[index],
+                      listGender: listGenderModels[index],
+                    );
+                  },
                 ),
               ),
               const SizedBox(
@@ -78,7 +66,10 @@ class InsertGenderScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Checkbox(value: true, onChanged: (value) {},),
+                        Checkbox(
+                          value: true,
+                          onChanged: (value) {},
+                        ),
                         Text(
                           'Mostrar gênero no perfil',
                           style: TextStyle(

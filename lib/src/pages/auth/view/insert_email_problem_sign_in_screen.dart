@@ -67,19 +67,22 @@ class InsertEmailProblemSignInScreen extends StatelessWidget {
               height: 15,
             ),
             Obx(
-              () => authController.isEmailValidate.value
-                  ? Text(
-                      'Enviaremos um link por e-mail que permitirá o login instantâneo',
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
+              () => SizedBox(
+                height: 50,
+                child: authController.isEmailValidate.value
+                    ? Text(
+                        'Enviaremos um link por e-mail que permitirá o login instantâneo',
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                        ),
+                      )
+                    : const Text(
+                        'Insira um endereço de e-mail válido',
+                        style: TextStyle(
+                          color: Colors.red,
+                        ),
                       ),
-                    )
-                  : const Text(
-                      'Insira um endereço de e-mail válido',
-                      style: TextStyle(
-                        color: Colors.red,
-                      ),
-                    ),
+              ),
             ),
             const SizedBox(
               height: 45,

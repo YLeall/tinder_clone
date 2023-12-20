@@ -29,7 +29,7 @@ GenderModel naoListado = GenderModel(
   description: 'Conta pra gente o que está faltando.',
 );
 
-List<GenderModel> listGenderHomem = [
+List<GenderModel> listGenderMan = [
   homemCis,
   homemIntersexual,
   homemTrans,
@@ -66,7 +66,7 @@ GenderModel naoListadoF = GenderModel(
   description: 'Conta pra gente o que está faltando.',
 );
 
-List<GenderModel> listGenderFeminino = [
+List<GenderModel> listGenderWoman = [
   mulherCis,
   mulherIntersexual,
   mulherTrans,
@@ -96,7 +96,7 @@ GenderModel bigenero = GenderModel(
       'Uma pessoa que tem dois ou mais gêneros (pode ser simultaneamente ou fluido).',
 );
 
-List<GenderModel> listGenderBinario = [
+List<GenderModel> listGenderBinary = [
   agenero,
   androgino,
   androgeno,
@@ -110,7 +110,44 @@ List<String> listTitleGender = [
 ];
 
 List<List<GenderModel>> listGenderModels = [
-  listGenderHomem,
-  listGenderFeminino,
-  listGenderBinario,
+  listGenderMan,
+  listGenderWoman,
+  listGenderBinary,
+];
+
+GenderModel heterossexual = GenderModel(
+  subTitle: 'Heterossexual',
+  description:
+      'Alguém que se sente atraído excluisamente por pessoas do gênero oposto',
+);
+
+GenderModel gay = GenderModel(
+  subTitle: 'Gay',
+  description:
+      'Um termo abrangente usado para descrever alguém que sente atração por pessoas do mesmo gênero',
+);
+
+GenderModel lesbica = GenderModel(
+  subTitle: 'Lésbica',
+  description:
+      'Uma mulher que sente atração sexual, romântica ou emocional por outra mulher',
+);
+
+GenderModel bissexual = GenderModel(
+  subTitle: 'Bissexual',
+  description:
+      'Alguém que pode pode sentir atração sexual, romântica ou emocional por pessoas de mais de um gênero',
+);
+
+List<GenderModel> listGenderSexualOrientation = [
+  heterossexual,
+  gay,
+  lesbica,
+  bissexual,
+];
+
+List<String> listLikeSee = [
+  'Homens',
+  'Mulheres',
+  'Todos',
 ];

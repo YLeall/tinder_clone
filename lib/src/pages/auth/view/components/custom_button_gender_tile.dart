@@ -7,27 +7,26 @@ class CustomButtonGenderTile extends StatefulWidget {
     super.key,
     required this.title,
     required this.listGender,
+    required this.isSelected,
+    this.onTap,
   });
   final String title;
   final List<GenderModel> listGender;
+  final bool isSelected;
+  final VoidCallback? onTap;
 
   @override
   State<CustomButtonGenderTile> createState() => _CustomButtonGenderTileState();
 }
 
 class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
-  bool isSelected = false;
+  int selectedIndexGenderTile = -1;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap: () {
-            debugPrint(widget.title);
-            setState(() {
-              isSelected = !isSelected;
-            });
-          },
+          onTap: widget.onTap,
           child: Container(
             padding: const EdgeInsets.all(10),
             margin: const EdgeInsets.only(
@@ -35,8 +34,9 @@ class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
             ),
             decoration: BoxDecoration(
               border: Border.all(
-                color:
-                    isSelected ? const Color(0xFFFE5048) : Colors.grey.shade600,
+                color: widget.isSelected
+                    ? const Color(0xFFFE5048)
+                    : Colors.grey.shade600,
               ),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -49,7 +49,7 @@ class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                isSelected
+                widget.isSelected
                     ? const Icon(
                         Icons.check,
                         color: Color(0xFFFE5048),
@@ -60,7 +60,7 @@ class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
           ),
         ),
         Visibility(
-          visible: isSelected,
+          visible: widget.isSelected,
           child: Card(
             color: const Color.fromARGB(255, 231, 231, 235),
             shape: RoundedRectangleBorder(
@@ -77,6 +77,7 @@ class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
                 splashColor: Colors.transparent,
               ),
               child: ExpansionTile(
+                initiallyExpanded: widget.isSelected,
                 childrenPadding: const EdgeInsets.all(15),
                 expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
                 title: const Text(
@@ -91,6 +92,12 @@ class _CustomButtonGenderTileState extends State<CustomButtonGenderTile> {
                   (index) => CustomButtonGenderExpansionTile(
                     subTitle: widget.listGender[index].subTitle,
                     description: widget.listGender[index].description,
+                    onTap: () {
+                      setState(() {
+                        selectedIndexGenderTile = index;
+                      });
+                    },
+                    isSelectedGenderTile: selectedIndexGenderTile == index,
                   ),
                 ),
               ),

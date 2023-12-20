@@ -1,31 +1,42 @@
 import 'package:flutter/material.dart';
 
-class CustomButtonGenderExpansionTile extends StatelessWidget {
-  CustomButtonGenderExpansionTile({
+class CustomButtonGenderExpansionTile extends StatefulWidget {
+  const CustomButtonGenderExpansionTile({
     super.key,
     required this.subTitle,
     required this.description,
+    required this.isSelectedGenderTile,
+    this.onTap,
+    this.marginBottom = 8,
   });
   final String subTitle;
   final String description;
+  final bool isSelectedGenderTile;
+  final VoidCallback? onTap;
+  final double marginBottom;
 
-  bool isSelected = false;
+  @override
+  State<CustomButtonGenderExpansionTile> createState() =>
+      _CustomButtonGenderExpansionTileState();
+}
 
+class _CustomButtonGenderExpansionTileState
+    extends State<CustomButtonGenderExpansionTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        debugPrint(subTitle);
-      },
+      onTap: widget.onTap,
       child: Container(
         padding: const EdgeInsets.all(8),
-        margin: const EdgeInsets.only(
-          bottom: 8,
+        margin: EdgeInsets.only(
+          bottom: widget.marginBottom,
         ),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
-            color: isSelected ? const Color(0xFFFE5048) : Colors.grey.shade600,
+            color: widget.isSelectedGenderTile
+                ? const Color(0xFFFE5048)
+                : Colors.grey.shade600,
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(10),
@@ -37,15 +48,18 @@ class CustomButtonGenderExpansionTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  subTitle,
+                  widget.subTitle,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                isSelected
-                    ? const Icon(
-                        Icons.check,
-                        color: Color(0xFFFE5048),
+                widget.isSelectedGenderTile
+                    ? const SizedBox(
+                        height: 20,
+                        child: Icon(
+                          Icons.check,
+                          color: Color(0xFFFE5048),
+                        ),
                       )
                     : Container(),
               ],
@@ -54,7 +68,7 @@ class CustomButtonGenderExpansionTile extends StatelessWidget {
               height: 5,
             ),
             Text(
-              description,
+              widget.description,
               style: TextStyle(
                 color: Colors.grey.shade700,
               ),

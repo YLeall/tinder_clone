@@ -6,7 +6,9 @@ import 'package:tinder_clone/src/pages/auth/view/insert_email_problem_sign_in_sc
 import 'package:tinder_clone/src/pages/auth/view/insert_email_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_gender_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_like_see_screen.dart';
+import 'package:tinder_clone/src/pages/auth/view/insert_maximum_distance_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_name_screen.dart';
+import 'package:tinder_clone/src/pages/auth/view/insert_search_matches_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_sexual_orientation_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/problem_sign_in_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/sign_in_screen.dart';
@@ -62,6 +64,14 @@ abstract class AppPages {
       name: PagesRoutes.insertLikeSee,
       page: () => const InsertLikeSeeScreen(),
     ),
+    GetPage(
+      name: PagesRoutes.insertSearchMatches,
+      page: () => const InsertSearchMatchesScreen(),
+    ),
+    GetPage(
+      name: PagesRoutes.insertMaximumDistance,
+      page: () => const InsertMaximumDistance(),
+    ),
   ];
 }
 
@@ -79,5 +89,7 @@ abstract class PagesRoutes {
   static const String insertGenderRoute = '/insertGender';
   static const String insertLikeSee = '/insertLikeSee';
   static const String insertSexualOrientation = '/insertSexualOrientation';
+  static const String insertSearchMatches = '/insertSearchMatches';
+  static const String insertMaximumDistance = '/insertMaximumDistance';
   static const String welcomeRoute = '/welcome';
 }

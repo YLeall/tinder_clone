@@ -151,3 +151,12 @@ List<String> listLikeSee = [
   'Mulheres',
   'Todos',
 ];
+
+List<String> listTitleMatches = [
+  "Um relacionamento sério",
+  "Algo sério, mas vamos ver...",
+  "Nada sério, mas depende...",
+  "Algo casual",
+  "Novas amizades",
+  "Ainda não sei",
+];

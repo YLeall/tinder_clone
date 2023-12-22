@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:tinder_clone/src/page_routes/app_pages.dart';
 import 'package:tinder_clone/src/pages/commom_widgets/custom_button.dart';
 
-class InsertMaximumDistance extends StatelessWidget {
+class InsertMaximumDistance extends StatefulWidget {
   const InsertMaximumDistance({super.key});
+
+  @override
+  State<InsertMaximumDistance> createState() => _InsertMaximumDistanceState();
+}
+
+class _InsertMaximumDistanceState extends State<InsertMaximumDistance> {
+  double _currentSliderValue = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -50,21 +59,29 @@ class InsertMaximumDistance extends StatelessWidget {
               child: Container(
                 child: Column(
                   children: [
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           'Preferência de distância',
                         ),
                         Text(
-                          'km',
+                          '${_currentSliderValue.round()} km',
                         ),
                       ],
                     ),
-                    Slider(
-                      value: 0,
-                      onChanged: (value) {},
-                      activeColor: const Color(0xFFFE5048),
+                    Transform.scale(
+                      scale: 1.18,
+                      child: Slider(
+                        value: _currentSliderValue,
+                        max: 161,
+                        onChanged: (value) {
+                          setState(() {
+                            _currentSliderValue = value;
+                          });
+                        },
+                        activeColor: const Color(0xFFFE5048),
+                      ),
                     ),
                   ],
                 ),
@@ -88,7 +105,9 @@ class InsertMaximumDistance extends StatelessWidget {
             ),
             CustomButton(
               label: 'Seguinte',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(PagesRoutes.insertFaculty);
+              },
             ),
             const SizedBox(
               height: 15,

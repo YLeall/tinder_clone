@@ -10,6 +10,7 @@ import 'package:tinder_clone/src/pages/auth/view/insert_habits_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_like_see_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_maximum_distance_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_name_screen.dart';
+import 'package:tinder_clone/src/pages/auth/view/insert_number_ddd_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_search_matches_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/insert_sexual_orientation_screen.dart';
 import 'package:tinder_clone/src/pages/auth/view/problem_sign_in_screen.dart';
@@ -82,6 +83,10 @@ abstract class AppPages {
       name: PagesRoutes.insertHabits,
       page: () => const InsertHabitsScreen(),
     ),
+    GetPage(
+      name: PagesRoutes.insertNumberDDD,
+      page: () => const InsertNumberDDDScreen(),
+    ),
   ];
 }
 
@@ -92,6 +97,7 @@ abstract class PagesRoutes {
   static const String insertEmailProblemSignInRoute =
       '/insertEmailProblemSignIn';
   static const String authNumberRoute = '/authNumber';
+  static const String insertNumberDDD = '/insertNumberDDD';
   static const String authNumberOtpRoute = '/authNumberOtp';
   static const String insertNameRoute = '/insertName';
   static const String insertEmailRoute = '/insertEmail';

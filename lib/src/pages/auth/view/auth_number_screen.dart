@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tinder_clone/src/page_routes/app_pages.dart';
@@ -34,31 +35,36 @@ class AuthNumberScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFF828693),
-                        width: 1.0,
-                      ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(PagesRoutes.insertNumberDDD);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      top: 8,
                     ),
-                  ),
-                  child: const Row(
-                    children: [
-                      Text(
-                        'BR +55',
-                        style: TextStyle(
-                          color: Color(0xFF444142),
-                          fontSize: 18,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Color(0xFF828693),
+                          width: 1.0,
                         ),
                       ),
-                      Icon(
-                        Icons.arrow_drop_down,
-                      ),
-                    ],
+                    ),
+                    child: const Row(
+                      children: [
+                        Text(
+                          'BR +55',
+                          style: TextStyle(
+                            color: Color(0xFF444142),
+                            fontSize: 18,
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -131,22 +137,3 @@ class AuthNumberScreen extends StatelessWidget {
     );
   }
 }
-
-
-// DropdownButton(
-  //   items: null,
-  //   onChanged: null,
-  //   hint: const Text(
-  //     'BR +55',
-  //     style: TextStyle(
-  //       color: Color(0xFF444142),
-  //       fontSize: 18,
-  //     ),
-  //   ),
-  //   padding: const EdgeInsetsDirectional.only(
-  //     top: 2,
-  //   ),
-  //   onTap: () {
-  //     debugPrint('apertei dropdown');
-  //   },
-  // ),

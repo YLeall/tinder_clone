@@ -63,20 +63,32 @@ class InsertFacultyScreen extends StatelessWidget {
             Container(
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      const Text(
-                        'Insira o nome da sua faculdade, atual ou ...',
-                      ),
-                      IconButton(
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Insira o nome da sua faculdade, atual ou',
+                      suffixIcon: IconButton(
                         onPressed: () {},
+                        iconSize: 20,
+                        padding: const EdgeInsets.only(
+                          top: 15,
+                        ),
                         icon: const Icon(
                           Icons.close_rounded,
                         ),
                       ),
-                    ],
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF828693),
+                          width: 1,
+                        ),
+                      ),
+                      isDense: true,
+                      contentPadding: const EdgeInsets.only(
+                        top: 20,
+                      ),
+                    ),
+                    readOnly: true,
                   ),
-                  const Divider(),
                 ],
               ),
             ),
